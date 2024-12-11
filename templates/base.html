@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% block styles %}
+    <!-- Load Bootstrap-Flask CSS here -->
+    {{ bootstrap.load_css() }}
+    <!-- Link to the styles.css here to apply styling to all the child templates.-->
+    {% endblock %}
+
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+  <button onclick="toggleTheme()" class="btn btn-secondary">Toggle Theme</button>
+
+    {% block content %}
+    <!-- Add a button to toggle theme -->
+    {% endblock %}
+
+    <script>
+      // Theme persistence script
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const htmlTag = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          htmlTag.setAttribute('data-bs-theme', savedTheme);
+        }
+      });
+
+      function toggleTheme() {
+        const htmlTag = document.documentElement;
+        const currentTheme = htmlTag.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        htmlTag.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
+    {% block scripts %}
+
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+
+  </body>
+</html>

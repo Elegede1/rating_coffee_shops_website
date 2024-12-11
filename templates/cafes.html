@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table table-dark table-striped table-hover">
+          <!-- This is where you will write the code to render a Bootstrap 
+          Table that contains all the information from the 
+          cafe-data.csv file. -->
+<!--          <table class="table">-->
+        <thead>
+          <tr class="row0">
+            <th scope="col">Cafe Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Open</th>
+            <th scope="col">Close</th>
+            <th scope="col">Coffee</th>
+            <th scope="col">Wifi</th>
+            <th scope="col">Power</th>
+          </tr>
+        </thead>
+
+          <tbody>
+          <tr>
+            <th scope="row">Lighthaus</th>
+            <td><a href="https://goo.gl/maps/2EvhB4oq4gyUXKXx9" >Maps link</a></td>
+            <td>11AM</td>
+            <td>&nbsp;3:30PM</td>
+            <td>☕☕☕☕️</td>
+            <td>💪💪</td>
+            <td>🔌🔌🔌</td>
+          </tr>
+          <tr>
+            <th scope="row">Esters</th>
+            <td><a href="https://goo.gl/maps/2EvhB4oq4gyUXKXx9" >Maps link</a></td>
+            <td>8AM</td>
+            <td>3PM</td>
+            <td>☕☕☕☕</td>
+            <td>💪💪💪</td>
+            <td>🔌</td>
+          </tr>
+          <tr>
+            <th scope="row">Ginger &amp; White</th>
+            <td><a href="https://goo.gl/maps/DqMx2g5LiAqv3pJQ9">Maps link</a></td>
+            <td>7:30AM</td>
+            <td>5:30PM</td>
+            <td>☕☕☕</td>
+            <td>✘</td>
+            <td>🔌</td>
+          </tr>
+          <tr>
+            <th scope="row">Mare Street Market</th>
+            <td><a href="https://goo.gl/maps/ALR8iBiNN6tVfuAA8">Maps link</a></td>
+            <td>8AM</td>
+            <td>1PM</td>
+            <td>☕☕</td>
+            <td>💪💪💪</td>
+            <td>🔌🔌🔌</td>
+          </tr>
+        </tbody>            
+            
+            
+<!--</table>-->
+  	  </table>
+
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
